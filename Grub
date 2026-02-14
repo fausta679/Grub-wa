@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunitas WhatsApp Kami</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-icon {
+            width: 80px;
+            height: 80px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .group-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-text h3 {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .info-text p {
+            color: #666;
+        }
+
+        .rules {
+            margin-bottom: 30px;
+        }
+
+        .rules h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .rules ul {
+            list-style: none;
+        }
+
+        .rules li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rules li:before {
+            content: "✓";
+            color: #25D366;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .join-button {
+            display: block;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .join-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .member-count {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .member-count span {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .whatsapp-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="whatsapp-icon">
+                    📱
+                </div>
+                <h1>KomunitaKami</h1>
+                <div class="subtitle">Grup Diskusi & Berbagi</div>
+            </div>
+
+            <div class="description">
+                Selamat datang di KomunitaKami! Tempat berkumpulnya orang-orang kreatif dan inspiratif untuk berbagi pengetahuan, pengalaman, dan membangun koneksi.
+            </div>
+
+            <div class="group-info">
+                <div class="info-item">
+                    <div class="info-icon">👥</div>
+                    <div class="info-text">
+                        <h3>Total Anggota</h3>
+                        <p>31 anggota </p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div class="info-text">
+                        <h3>Topik Diskusi</h3>
+                        <p>Perbincangan santai</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-text">
+                        <h3>Waktu Aktif</h3>
+                        <p>• GRUP DI TUTUP JAM 22.30 SETIAP SABTU MINGGU </br>
+• HARI BIASA JAM 21.00
+DIBUKA JAM 6.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rules">
+                <h2>📋 Aturan Grup</h2>
+                <ul>
+                    <li>Bersikap sopan dan menghormati sesama anggota</li>
+                    <li>NO BILANG (P)</li>
+                    <li>NO STIKER 18+</li>
+                    <li>Dilarang menyebarkan konten hoax</li>
+                    <li>Gunakan bahasa yang baik dan sopan</li>
+                    <li>JANGAN SPAM STIKER GAK JELAS</li>
+                </ul>
+            </div>
+
+            <div class="member-count">
+                <span>🔥 31 anggota online</span> saat ini
+            </div>
+
+            <a href="https://chat.whatsapp.com/GxubjszAz6b5XQowXFXI60?mode=gi_t" class="join-button" target="_blank">
+                Gabung Grup Sekarang
+            </a>
+
+            <div class="footer">
+                © 2026 KomunitasKami. Semua hak dilindungi.
+                <br>
+                <small>Dibuat untuk kebersamaan yang lebih baik</small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animasi sederhana untuk member count
+        setInterval(() => {
+            const memberCount = document.querySelector('.member-count span');
+            const randomNum = Math.floor(Math.random() * 30) + 15;
+            memberCount.textContent = `🔥 ${randomNum}+ anggota online`;
+        }, 10000);
+
+        // Alert ketika mengklik tombol gabung
+        document.querySelector('.join-button').addEventListener('click', function(e) {
+            const confirmJoin = confirm('Anda akan diarahkan ke grup WhatsApp. Lanjutkan?');
+            if (!confirmJoin) {
+                e.preventDefault();
+            }
+        });
+
+        // Efek hover pada info items
+        const infoItems = document.querySelectorAll('.info-item');
+        infoItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
